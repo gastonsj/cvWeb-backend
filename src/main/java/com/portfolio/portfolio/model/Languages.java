@@ -23,6 +23,6 @@ public class Languages {
     private float writingValue;
     @Column(name="listeningValue")
     private float listeningValue;
-    @Column(name="url_photo", length = 100)
+    @Column(name="url_photo", length = 300)
     private String url_photo;
 }

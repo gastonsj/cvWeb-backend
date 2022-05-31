@@ -22,7 +22,7 @@ public class Experiences {
     private String end;
     @Column(name="description", length = 50)
     private String description;
-    @Column(name="url_photo", length = 100)
+    @Column(name="url_photo", length = 300)
     private String url_photo;
     
     public void setId(Long id) {

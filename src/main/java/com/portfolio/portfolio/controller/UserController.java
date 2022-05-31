@@ -16,7 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin(origins = "https://cv-web-3c8ec.web.app", maxAge = 3600)
+@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
+//@CrossOrigin(origins = "https://cv-web-3c8ec.web.app", maxAge = 3600)
 @RestController
 @RequestMapping("/usuario")
 public class UserController {

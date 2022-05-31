@@ -1,7 +1,7 @@
 package com.portfolio.portfolio.controller;
 
-import com.portfolio.portfolio.model.Education;
-import com.portfolio.portfolio.service.iEducationService;
+import com.portfolio.portfolio.model.Project;
+import com.portfolio.portfolio.service.iProjectService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,33 +16,34 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 //@CrossOrigin(origins = "https://cv-web-3c8ec.web.app", maxAge = 3600)
 @RestController
-@RequestMapping("/education")
-public class EducationController {
-    
+@RequestMapping("/project")
+public class ProjectController {
     @Autowired
-    private iEducationService eServ;
+    private iProjectService pServ;
     
     @GetMapping("/all")
-    public ResponseEntity<List<Education>> getEducation(){      
-        List<Education> edu=eServ.viewEducation();
-        return new ResponseEntity<>(edu,HttpStatus.OK);
+    public ResponseEntity<List<Project>> getProject(){      
+        List<Project> proj=pServ.viewProject();
+        return new ResponseEntity<>(proj,HttpStatus.OK);
     }
     @PutMapping("/update")
-    public ResponseEntity<Education> updateEducation(@RequestBody Education edu){
-        Education updateEducation = eServ.updateEducation(edu);
-        return new ResponseEntity<>(updateEducation,HttpStatus.OK);
+    public ResponseEntity<Project> updateProject(@RequestBody Project proj){
+        Project updateProject = pServ.updateProject(proj);
+        return new ResponseEntity<>(updateProject,HttpStatus.OK);
     }
     @PostMapping("/add")
-    public ResponseEntity<Education> addEducation(@RequestBody Education edu){
-        Education newEducation = eServ.addEducation(edu);
-        return new ResponseEntity<>(newEducation, HttpStatus.CREATED);
+    public ResponseEntity<Project> addProject(@RequestBody Project proj){
+        Project newProject = pServ.addProject(proj);
+        return new ResponseEntity<>(newProject, HttpStatus.CREATED);
     } 
     @DeleteMapping("delete/{id}")
-    public ResponseEntity<?> deleteEducation(@PathVariable("id") Long id){
-        eServ.deleteEducation(id);
+    public ResponseEntity<?> deleteProject(@PathVariable("id") Long id){
+        pServ.deleteProject(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+    
 }

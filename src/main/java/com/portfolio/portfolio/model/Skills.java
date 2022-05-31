@@ -16,7 +16,7 @@ public class Skills {
     private String skillName;
     @Column(name="value")
     private float value;
-    @Column(name="url_photo", length = 100)
+    @Column(name="url_photo", length = 300)
     private String url_photo;
     
     public void setId(Long id) {

@@ -32,8 +32,15 @@ public class User {
     private String phone;
     @Column(name="about", length = 50)
     private String about;
-    @Column(name="url_photo", length = 50)
+    @Column(name="url_photo", length = 300)
     private String url_photo;
+    @Column(name="url_linkedin", length = 100)
+    private String url_linkedin;
+    @Column(name="url_github", length = 100)
+    private String url_github;
+    @Column(name="url_facebook", length = 100)
+    private String url_facebook;
+
     
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "id" )
     private List<Education> educationList;
@@ -127,5 +134,28 @@ public class User {
 
     public String getUrl_photo() {
         return url_photo;
+    }
+    public void setUrl_linkedin(String url_linkedin) {
+        this.url_linkedin = url_linkedin;
+    }
+
+    public void setUrl_github(String url_github) {
+        this.url_github = url_github;
+    }
+
+    public void setUrl_facebook(String url_facebook) {
+        this.url_facebook = url_facebook;
+    }
+
+    public String getUrl_linkedin() {
+        return url_linkedin;
+    }
+
+    public String getUrl_github() {
+        return url_github;
+    }
+
+    public String getUrl_facebook() {
+        return url_facebook;
     }
 }
